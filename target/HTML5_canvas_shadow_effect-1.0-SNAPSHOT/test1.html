@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<!--
+Project name(项目名称)：HTML5_canvas_shadow_effect
+  File name(文件名): test1
+  Authors(作者）: mao
+  Author QQ：1296193245
+  GitHub：https://github.com/maomao124/
+  Date(创建日期)： 2022/4/4
+  Time(创建时间)： 22:21
+  Description(描述)： 无
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="animate.css">
+    <style>
+        .p {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        body {
+            background-color: skyblue;
+        }
+
+        canvas {
+            background-color: white;
+            border: 5px solid yellow;
+        }
+    </style>
+</head>
+<body>
+<div class="p">
+    <canvas class="animated zoomInUp" id="canvas" width="600" height="600">
+        浏览器不支持画布功能
+    </canvas>
+</div>
+
+<script>
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+
+    //设置阴影的x轴偏移
+    ctx.shadowOffsetX = 15;
+    //设置阴影的y轴偏移
+    ctx.shadowOffsetY = 15;
+    //设置阴影的模糊度
+    ctx.shadowBlur = 20;
+    //设置阴影的颜色
+    ctx.shadowColor = "black";
+
+    //设置图形的填充色为红色
+    ctx.fillStyle = "red";
+    //绘制边长为50像素的矩形
+    ctx.fillRect(50, 50, 500, 500);
+</script>
+</body>
+</html>
